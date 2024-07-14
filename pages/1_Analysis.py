@@ -43,6 +43,11 @@ with col2:
     fig, ax = plt.subplots(figsize=(15, 5))
     df.plot(x = 'Growth', y = 'OM', kind='scatter', title='Revenue Growth vs Operating Margin (filtered)', ax = ax)
     st.pyplot(fig)
+    st.markdown(
+        '''
+        To prevent outliers from biasing the industry mean, I restricted `OM > 2e6` and `Growth < 1e7`.        
+        '''
+    )
 
 
 st.write('# Break-away Analysis')
