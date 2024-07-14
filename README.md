@@ -7,3 +7,5 @@ From an online portal, we retrieved a wide range of data about indian companies 
   - **Resilient**, those with above-average performance both _before_ and _after_ year 2020;
   - **New-breakaways**, those with above-average performance only _after_ year 2020;
   - **Non-resilient**, those with above-average performance only _before_ year 2020.
+
+Webapp: https://resilient-companies.streamlit.app/
