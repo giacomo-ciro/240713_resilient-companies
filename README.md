@@ -1,4 +1,4 @@
-# Resilient Companies
+# 📈 Resilient Companies
 This repo hosts a streamlit webapp for the Resilient Companies project.  
 We collected a wide range of data about indian companies with more than 10M revenues from 2017 to 2023 and analyzed as follows:  
 1) We computed key financial metrics, such as Revenue Growth and Operating Margin;  
