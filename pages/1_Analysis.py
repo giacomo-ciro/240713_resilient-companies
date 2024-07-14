@@ -15,7 +15,7 @@ st.set_page_config(
     }
 )
 
-df = pd.read_csv('../save/Orbis_final.csv', index_col = 0, na_values='n.a.')
+df = pd.read_csv('./data/Orbis_final.csv', index_col = 0, na_values='n.a.')
 
 st.write('# Pre-processing')
 st.markdown(
@@ -102,8 +102,8 @@ st.markdown(
     Companies are now classified in one of the following categories:
     '''
 )
-breakaway_before = pd.read_csv('../save/breakaway_before.csv', index_col = 0)
-breakaway_after = pd.read_csv('../save/breakaway_after.csv', index_col = 0)
+breakaway_before = pd.read_csv('./data/breakaway_before.csv', index_col = 0)
+breakaway_after = pd.read_csv('./data/breakaway_after.csv', index_col = 0)
 
 col1, col2, col3 = st.columns([1, 1, 1])
 

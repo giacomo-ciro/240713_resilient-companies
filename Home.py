@@ -21,7 +21,7 @@ st.markdown(
     Below you can find the dataset used (retrieved from [Orbis](https://login.bvdinfo.com/R0/Orbis)) and some metadata.
     '''
 )
-df = pd.read_csv('../data/Orbis_processed.csv', index_col = 0, na_values='n.a.')
+df = pd.read_csv('./data/Orbis_processed.csv', index_col = 0, na_values='n.a.')
 st.write(df)
 df.rename(columns={
     'Company name Latin alphabet': 'Name',
