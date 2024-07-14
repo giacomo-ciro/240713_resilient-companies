@@ -76,7 +76,7 @@ with col1:
     st.write(temp.loc[:, ['Name', 'Industry']])
     st.write(f'Break-away companies: `{temp.shape[0]}` (`{temp.shape[0] / df.shape[0]:.4%}`)')
     fig, ax = plt.subplots(figsize=(15, 5))
-    temp.reset_index().Industry.value_counts().plot(kind='bar', title='Industry Group', ax = ax)
+    temp.reset_index().Industry.value_counts().plot(kind='bar', title='Industry Group of BA companies', ax = ax)
     st.pyplot(fig)
 
 # AFTER
@@ -98,7 +98,7 @@ with col2:
     st.write(temp.loc[:, ['Name', 'Industry']])
     st.write(f'Break-away companies: `{temp.shape[0]}` (`{temp.shape[0] / df.shape[0]:.4%}`)')
     fig, ax = plt.subplots(figsize=(15, 5))
-    temp.reset_index().Industry.value_counts().plot(kind='bar', title='Industry Group', ax = ax)
+    temp.reset_index().Industry.value_counts().plot(kind='bar', title='Industry Group of BA companies', ax = ax)
     st.pyplot(fig)
 
 st.write('# Resilient Companies')
