@@ -22,15 +22,16 @@ st.markdown(
     '''
 )
 df = pd.read_csv('./data/Orbis_processed.csv', index_col = 0, na_values='n.a.')
+print(df.columns)
 st.write(df)
-df.rename(columns={
+df = df.rename(columns={
     'Company name Latin alphabet': 'Name',
     'US SIC, primary code(s)': 'SIC',
-    'Operating profit (loss) [EBIT]\nm USD': 'EBIT',
-    'Operating revenue (Turnover)\nm USD': 'Turnover',
-    'Profit (loss) for the period [Net income]\nm USD': 'Profit',
-    'Total equity\nm USD': 'Equity',
-}, inplace=True)
+    'Operating profit (loss) [EBIT]\r\nm USD': 'EBIT',
+    'Operating revenue (Turnover)\r\nm USD': 'Turnover',
+    'Profit (loss) for the period [Net income]\r\nm USD': 'Profit',
+    'Total equity\r\nm USD': 'Equity',
+})
 st.write(f'Shape: (`{df.shape[0]:,}`,`{df.shape[1]:,}`)')
 st.write(f'Unique Companies: `{df.Name.unique().shape[0]:,}`')
 df = df[['Name', 'SIC', 'Year', 'EBIT', 'Turnover', 'Profit', 'Equity']]
