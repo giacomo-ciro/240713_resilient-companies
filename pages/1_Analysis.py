@@ -30,6 +30,8 @@ st.markdown(
 )
 st.write('### Final Dataset')
 st.write(df)
+st.write(f'Shape: (`{df.shape[0]:,}`,`{df.shape[1]:,}`)')
+st.write(f'Unique Companies: `{df.Name.unique().shape[0]:,}`')
 
 col1, col2 = st.columns([1, 1])  # Adjust the column widths as needed
 with col1:
