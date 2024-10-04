@@ -33,6 +33,7 @@ df = df.rename(columns={
 })
 st.write(f'Shape: (`{df.shape[0]:,}`,`{df.shape[1]:,}`)')
 st.write(f'Unique Companies: `{df.Name.unique().shape[0]:,}`')
+st.write(f'renamed df')
 st.write(df)
 df = df[['Name', 'SIC', 'Year', 'EBIT', 'Turnover', 'Profit', 'Equity']]
 
