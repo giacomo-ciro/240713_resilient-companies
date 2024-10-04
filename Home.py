@@ -22,7 +22,6 @@ st.markdown(
     '''
 )
 df = pd.read_csv('./data/Orbis_processed.csv', index_col = 0, na_values='n.a.')
-print(df.columns)
 st.write(df)
 df = df.rename(columns={
     'Company name Latin alphabet': 'Name',
@@ -34,6 +33,7 @@ df = df.rename(columns={
 })
 st.write(f'Shape: (`{df.shape[0]:,}`,`{df.shape[1]:,}`)')
 st.write(f'Unique Companies: `{df.Name.unique().shape[0]:,}`')
+st.write(df)
 df = df[['Name', 'SIC', 'Year', 'EBIT', 'Turnover', 'Profit', 'Equity']]
 
 # Visualize Nulls
