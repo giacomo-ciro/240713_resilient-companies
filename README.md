@@ -7,8 +7,8 @@
 In this document, we explain the analysis conducted for the *Resilient Companies* project. The goal of this project is to classify companies into one of three categories, based on how they perform compared to their industry average according to different metrics.
 
 ## Introduction
-From the [Orbis portal](https://login.bvdinfo.com/R0/Orbis) we download raw data about indian companies. The data comes in form of a table split into two `.xlsx` files for capacity constraints. We have information about `31710` uniquely identified by their `BvD ID number`.  
-We manipulate the tables so to obtain a single dataset with the following features:
+From the [Orbis portal](https://login.bvdinfo.com/R0/Orbis) we download raw data about indian companies. The data comes in form of a table split into two `.xlsx` files for capacity constraints. We have information about `31,710` companies uniquely identified by their `BvD ID number`.  
+We manipulate the tables to obtain a single dataset with the following features:
 
 - Company Name
 - US SIC
@@ -19,17 +19,17 @@ We manipulate the tables so to obtain a single dataset with the following featur
 - Profit (Net Income)
 - Total Equity  
 
-In a nutshell, for each unique company we have financial information regarding the years from 2017 to 2023.  
+For each unique company, we have financial information regarding the years from 2017 to 2023.  
 
-**Note**: There are companies with the same name and operating in different sectors, which are to be considered different for the purpose of this analysis. From now on, we use the BvD ID Number (BVD) to refer uniquely to each company.
+**Note**: There are companies with the same name operating in different sectors, which are to be considered different for the purpose of this analysis. From now on, we use the BvD ID Number (BVD) to assess the uniqueness of each company.
 
 ## Pre-processing
-Before conducting the analysis, we process the dataset by dealing with null values, computing the required metrics and manage outliers.
+Before conducting the analysis, we process the dataset by dealing with null values, then we compute the required metrics and manage outliers.
 
 ### Missing Values 
-First, we drop entirely the year `2023` due to the high number of missing values encountered (>90%). For the other years, the number of missing values is (<20%) for all features, except for the `Total Equity`. Therefore, we discard entirely this feature and keep the non-null values for the others.  
+First, we drop entirely the year `2023` due to the high number of missing values encountered (>90%). For the other years, the number of missing values is <20% for all features, except for the `Total Equity`. Therefore, we discard entirely this feature and keep the non-null values for the others.  
 
-Morevoer, we drop all those companies with `TURNOVER==0`, to avoid the metrics to diverge.
+Morevoer, we drop all those companies with `TURNOVER==0`, to avoid the metrics to diverge when we compute them later.
 
 <img src="img/nan_hist.png" width="400" style="display: block; margin: 0 auto">
 
@@ -52,17 +52,16 @@ We approach the outlier problem via simple visual inpection of the scatterplot o
 <img src="img/outliers_filtered.png" width="400">
 
 ## Resilient Analysis
-After all preprocessing, we are left with `20,636` unique companies identified by their BVD whose `OM` and `RG` are measured for the years from `2018` to `2022` inclusive.  
-Now we compare each company performance with the industry average.  
+After preprocessing, we are left with `20,636` unique companies identified by their BVD and the respective `OM` and `RG` are measured for the years from `2018` to `2022` inclusive. We now compare each company's performance with the corresponding industry average.  
 
-We say that a company is a *break-away company* in a period if both its metrics are above the industry median for the entire period. 
+We say that a company is a *break-away company* in a period if both `OM` and `RG` are above the industry median for the entire period. 
 
-In particular, we identify the following subsets:
+In particular, we identify the following disjoint subsets:
 - **Resilient** Companies -> break-away companies *before* and *after* year 2020 exclusive -> 479 cos
 - **Non-Resilient** Companies -> break-away companies *before* but *not after* year 2020 exclusive ->1704 cos
 - **New Break-away** Companies -> break-away companies *after* but *not before* year 2020 exclusive ->1717 cos
 
-**Note**: we consider the median as aggregate function because is more robust to outliers and extreme values.
+**Note**: we consider the median as aggregate function because it is more robust to outliers and extreme values.
 
 ## Appendix
 The following data is made available at [this link](https://github.com/giacomo-ciro/240713_resilient-companies/tree/main/data):
