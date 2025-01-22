@@ -77,7 +77,7 @@ The following data is made available at [this link](https://github.com/giacomo-c
 - `orbis_raw_1_15000.xlsx` the first part of the raw data as directly downloaded from Orbis
 - `orbis_raw_15001_32205.xlsx` the second part of the raw data as directly downloaded from Orbis
 - `orbis.csv` the data obtained by concatenating, melting and pivoting the raw data 
-- `orbis_final.csv` the data after preprocessing, feature extraction and outlier handling
+- `orbis_processed.csv` the data after preprocessing, feature extraction and outlier handling
 - `breakaway_before_2020.csv` the list of break-away companies before year 2020 exclusive, ordered alphabetically
 - `breakaway_after_2020.csv` the list of break-away companies after year 2020 exclusive, ordered alphabetically
 - `breakaway_before_2020_all_years.csv` the list of break-away companies before year 2020 exclusive, with metrics and industry median for year 2017-2018-2019
